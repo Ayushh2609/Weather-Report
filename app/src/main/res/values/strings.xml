@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Weather Report</string>
+    <string name="splash">There\'s no such thing as bad weather,\n only unsuitable clothing.</string>
+</resources>
