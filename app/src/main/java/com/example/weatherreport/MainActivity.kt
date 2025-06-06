@@ -1,6 +1,5 @@
 package com.example.weatherreport
 
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.SearchView
 import android.widget.Toast
@@ -22,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val binding : ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
+    private lateinit var geoApi: GeoApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +48,12 @@ class MainActivity : AppCompatActivity() {
                 }
                 return true
             }
-
             override fun onQueryTextChange(p0: String?): Boolean {
                 return true
             }
 
         })
     }
-
     private fun fetchWeatherData(cityName : String) {
         val retroFit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())

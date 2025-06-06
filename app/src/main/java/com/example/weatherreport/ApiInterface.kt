@@ -13,4 +13,12 @@ interface ApiInterface {
         @Query("appid") appid : String,
         @Query("units") units : String
     ) : Call<WeatherApp>
+
+    data class CitySuggestion(
+        val name : String,
+        val state : String?,
+        val country : String,
+        val lon :String,
+        val lat : String,
+    )
 }
