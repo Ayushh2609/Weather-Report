@@ -8,462 +8,479 @@
     android:background="@drawable/back_sun"
     tools:context=".MainActivity">
 
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/autoCompleteTextView"-->
-<!--        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="8dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginRight="8dp"-->
-<!--        app:boxStrokeWidth="0dp"-->
-<!--        app:boxStrokeWidthFocused="0dp"-->
-<!--        app:endIconTint="@color/black"-->
-<!--        app:startIconDrawable="@drawable/search_icon"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" >-->
-
-<!--        <AutoCompleteTextView-->
-<!--            android:id="@+id/cityAutoComplete"-->
-
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:backgroundTint="@color/white"-->
-<!--            android:background="@drawable/search"-->
-<!--            android:inputType="text"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:text=""-->
-<!--            android:textColor="@color/black" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="8dp"
-        android:iconifiedByDefault="false"
-        android:background="@drawable/search"
-        android:queryBackground="@android:color/transparent"
-        android:queryHint="Search any state...."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!--    <SearchView-->
-    <!--        android:id="@+id/searchView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:layout_marginTop="24dp"-->
-    <!--        android:layout_marginEnd="8dp"-->
-    <!--        android:background="@drawable/search"-->
-    <!--        android:focusedByDefault="false"-->
-    <!--        android:iconifiedByDefault="false"-->
-    <!--        android:queryHint="Search any city..."-->
-    <!--        android:searchIcon="@drawable/search_icon"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/searchView"
-        app:layout_constraintStart_toStartOf="@+id/searchView"
-        app:layout_constraintTop_toBottomOf="@+id/searchView">
-
-        <TextView
-            android:id="@+id/cityName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/location_icon"
-            android:drawablePadding="7dp"
-            android:fontFamily="@font/alatsi"
-            android:text=""
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView4"
-        android:layout_width="200dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/sun" />
-
-
-    <TextView
-        android:id="@+id/conditionWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Sunny"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView4"
-        app:layout_constraintHorizontal_bias="0.556"
-        app:layout_constraintStart_toStartOf="@+id/lottieAnimationView4"
-        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView4">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="84dp"
-        android:text="Today"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="0°C"
-        android:textColor="@color/black"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/maxTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="MAX:- 00:00 °C"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/conditionWeather" />
-
-    <TextView
-        android:id="@+id/minTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="MIN:- 00:00 °C"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/maxTemp"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/maxTemp"
-        app:layout_constraintTop_toBottomOf="@+id/maxTemp" />
-
-    <TextView
-        android:id="@+id/day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Tuesday"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/minTemp"
-        app:layout_constraintStart_toStartOf="@+id/minTemp"
-        app:layout_constraintTop_toBottomOf="@+id/minTemp">
-
-    </TextView>
-
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="22 January 2025"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/day"
-        app:layout_constraintStart_toStartOf="@+id/day"
-        app:layout_constraintTop_toBottomOf="@+id/day">
-
-    </TextView>
-
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="224dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/frame_background"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!--    <com.google.android.material.textfield.TextInputLayout-->
+            <!--        android:id="@+id/autoCompleteTextView"-->
+            <!--        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"-->
+            <!--        android:layout_width="0dp"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginLeft="8dp"-->
+            <!--        android:layout_marginTop="16dp"-->
+            <!--        android:layout_marginRight="8dp"-->
+            <!--        app:boxStrokeWidth="0dp"-->
+            <!--        app:boxStrokeWidthFocused="0dp"-->
+            <!--        app:endIconTint="@color/black"-->
+            <!--        app:startIconDrawable="@drawable/search_icon"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toTopOf="parent" >-->
+
+            <!--        <AutoCompleteTextView-->
+            <!--            android:id="@+id/cityAutoComplete"-->
+
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:backgroundTint="@color/white"-->
+            <!--            android:background="@drawable/search"-->
+            <!--            android:inputType="text"-->
+            <!--            android:gravity="center_vertical"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="@color/black" />-->
+            <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="80dp"
-                android:layout_height="88dp"
-                android:background="@drawable/frame_background"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/lottieAnimationView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/temp" />
-
-                <TextView
-                    android:id="@+id/humidity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="0"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="Humidity"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="80dp"
-                android:layout_height="88dp"
-                android:background="@drawable/frame_background"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:lottie_rawRes="@raw/temp" />
-
-                <TextView
-                    android:id="@+id/windSpeed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="0"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="Wind Speed"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="80dp"
-                android:layout_height="88dp"
-                android:background="@drawable/frame_background"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:lottie_rawRes="@raw/temp" />
-
-                <TextView
-                    android:id="@+id/condition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Rain"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="Condition"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout5"
-                android:layout_width="80dp"
-                android:layout_height="88dp"
-                android:background="@drawable/frame_background"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/sun_rise" />
-
-                <TextView
-                    android:id="@+id/sunRise"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="00:00 PM"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="Sunrise"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout6"
-                android:layout_width="80dp"
-                android:layout_height="88dp"
-                android:background="@drawable/frame_background"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/sun_set" />
-
-                <TextView
-                    android:id="@+id/sunSet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="00:00 PM"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="Sunset"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout7"
-                android:layout_width="80dp"
-                android:layout_height="88dp"
-                android:background="@drawable/frame_background"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:lottie_rawRes="@raw/temp" />
-
-                <TextView
-                    android:id="@+id/seaLevel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="00"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="Sea level"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
-
-            <androidx.constraintlayout.helper.widget.Flow
-                android:id="@+id/flow2"
+            <SearchView
+                android:id="@+id/searchView"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                app:constraint_referenced_ids="linearLayout2,linearLayout3,linearLayout4,linearLayout5,linearLayout6,linearLayout7"
-                app:flow_maxElementsWrap="3"
-                app:flow_wrapMode="chain"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/search"
+                android:iconifiedByDefault="false"
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="Search any state...."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--    <SearchView-->
+            <!--        android:id="@+id/searchView"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginStart="8dp"-->
+            <!--        android:layout_marginTop="24dp"-->
+            <!--        android:layout_marginEnd="8dp"-->
+            <!--        android:background="@drawable/search"-->
+            <!--        android:focusedByDefault="false"-->
+            <!--        android:iconifiedByDefault="false"-->
+            <!--        android:queryHint="Search any city..."-->
+            <!--        android:searchIcon="@drawable/search_icon"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/searchView"
+                app:layout_constraintStart_toStartOf="@+id/searchView"
+                app:layout_constraintTop_toBottomOf="@+id/searchView">
+
+                <TextView
+                    android:id="@+id/cityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/location_icon"
+                    android:drawablePadding="7dp"
+                    android:fontFamily="@font/alatsi"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimationView4"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/sun" />
+
+
+            <TextView
+                android:id="@+id/conditionWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Sunny"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView4"
+                app:layout_constraintHorizontal_bias="0.556"
+                app:layout_constraintStart_toStartOf="@+id/lottieAnimationView4"
+                app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView4">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="84dp"
+                android:text="Today"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="0°C"
+                android:textColor="@color/black"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textView2"
+                app:layout_constraintHorizontal_bias="0.479"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/maxTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="MAX:- 00:00 °C"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/conditionWeather" />
+
+            <TextView
+                android:id="@+id/minTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="MIN:- 00:00 °C"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/maxTemp"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/maxTemp"
+                app:layout_constraintTop_toBottomOf="@+id/maxTemp" />
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Tuesday"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/minTemp"
+                app:layout_constraintStart_toStartOf="@+id/minTemp"
+                app:layout_constraintTop_toBottomOf="@+id/minTemp">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="22 January 2025"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/day"
+                app:layout_constraintStart_toStartOf="@+id/day"
+                app:layout_constraintTop_toBottomOf="@+id/day">
+
+            </TextView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="224dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/frame_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="80dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/frame_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottieAnimationView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/temp" />
+
+                        <TextView
+                            android:id="@+id/humidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:text="Humidity"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="80dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/frame_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:lottie_rawRes="@raw/temp" />
+
+                        <TextView
+                            android:id="@+id/windSpeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:text="Wind Speed"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="80dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/frame_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:lottie_rawRes="@raw/temp" />
+
+                        <TextView
+                            android:id="@+id/condition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Rain"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:text="Condition"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout5"
+                        android:layout_width="80dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/frame_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/sun_rise" />
+
+                        <TextView
+                            android:id="@+id/sunRise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00 PM"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:text="Sunrise"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout6"
+                        android:layout_width="80dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/frame_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/sun_set" />
+
+                        <TextView
+                            android:id="@+id/sunSet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00 PM"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:text="Sunset"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout7"
+                        android:layout_width="80dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/frame_background"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:lottie_rawRes="@raw/temp" />
+
+                        <TextView
+                            android:id="@+id/seaLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:text="Sea level"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.helper.widget.Flow
+                        android:id="@+id/flow2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        app:constraint_referenced_ids="linearLayout2,linearLayout3,linearLayout4,linearLayout5,linearLayout6,linearLayout7"
+                        app:flow_maxElementsWrap="3"
+                        app:flow_wrapMode="chain"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </FrameLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
