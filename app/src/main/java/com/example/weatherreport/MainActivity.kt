@@ -1,6 +1,8 @@
 package com.example.weatherreport
 
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -32,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val id = binding.searchView.context.resources.getIdentifier("android:id/search_src_text" , null , null)
+        val searchText = binding.searchView.findViewById<EditText>(id)
+
+        searchText.setTextColor(Color.BLACK)
 
         fetchWeatherData("haridwar")
         searchCity()
